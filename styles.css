@@ -1,0 +1,295 @@
+/*
+  Hensdens Real Estate Website Styles
+  Simple, clean design with navy blue and white color scheme
+  Mobile-first approach, no animations, no hover effects
+*/
+
+/* CSS Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Typography */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: white;
+}
+
+/* Header / Hero Section */
+header {
+  background: #0b2a4a;  /* Navy blue background */
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Section Styling */
+section {
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #0b2a4a;  /* Navy blue for all headings */
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #0b2a4a;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs and Text */
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Lists */
+ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Properties Section */
+.properties {
+  margin: 1.5rem 0;
+}
+
+.property {
+  background: #f8f9fa;  /* Light grey background */
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #0b2a4a;  /* Navy blue accent */
+}
+
+.property h4 {
+  color: #0b2a4a;
+  margin-bottom: 0.5rem;
+}
+
+.property p {
+  margin: 0;
+  color: #444;
+}
+
+/* Contact Information */
+.contact-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 4px;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 1rem 0;
+}
+
+label {
+  font-weight: bold;
+  color: #0b2a4a;
+}
+
+.required {
+  color: #c41e3a;  /* Red asterisk for required fields */
+}
+
+input, textarea, select, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #0b2a4a;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Button Styling */
+button {
+  background: #0b2a4a;  /* Navy blue background */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+button:focus {
+  outline: 2px solid #0b2a4a;
+  outline-offset: 2px;
+}
+
+/* Form Note */
+.form-note {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+/* Footer */
+footer {
+  background: #f8f9fa;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid #ddd;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Mobile-First Responsive Design */
+@media (min-width: 768px) {
+  /* Tablets and larger screens */
+  header h1 {
+    font-size: 3rem;
+  }
+  
+  header p {
+    font-size: 1.5rem;
+  }
+  
+  section {
+    padding: 3rem 2rem;
+  }
+  
+  .properties {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .property:nth-child(3) {
+    grid-column: 1 / -1;  /* Full width for the third property */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop screens */
+  .properties {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .property:nth-child(3) {
+    grid-column: auto;  /* Reset to normal column for desktop */
+  }
+  
+  form {
+    max-width: 500px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header {
+    background: white !important;
+    color: #0b2a4a !important;
+  }
+  
+  .property {
+    background: white !important;
+    border: 1px solid #0b2a4a !important;
+  }
+  
+  form, button {
+    display: none !important;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  /* Respect user's motion preferences - no animations anyway */
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  header {
+    background: black;
+    color: white;
+  }
+  
+  h1, h2, h3, h4 {
+    color: black;
+  }
+  
+  input, textarea, select {
+    border: 2px solid black;
+  }
+  
+  button {
+    background: black;
+    color: white;
+    border: 2px solid black;
+  }
+}
